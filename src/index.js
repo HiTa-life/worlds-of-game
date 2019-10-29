@@ -1,3 +1,6 @@
+import { User } from "./shared/models/user.model";
+
+
 // let login = "";
 // let password = "";
 
@@ -74,11 +77,11 @@ div1.setAttribute("class","div1");
 div2.setAttribute("class","div2");
 div1.appendChild(div2);
 
+const newUser = new User("licorne", 
+"test@example.com"
+);
+console.log(newUser);
 
-const user = {
-  login :"",
-  password : ""
-};
 
 const setAttribute = (name, json) =>{ 
   for (const key in json){
@@ -86,18 +89,13 @@ const setAttribute = (name, json) =>{
   };       
 };
 
-const createElement = (nameElement, json) => {
-  for (const key in json){
-    const nameElement = document.createElement(json[key]);
-  };
-};
 
 const displayTitle = (Titletext) => {
-
   const pageTitle =  document.createElement("h1");
   const text = document.createTextNode(Titletext);
   pageTitle.setAttribute("class","pageTitle"); 
-  const img = document.createElement("img");  
+  const img = document.createElement("img");
+   
   setAttribute(img,{
     class : "imgLogo",
     src:"assets/images/wg.png",
@@ -126,7 +124,7 @@ const displayLoginForm = () => {
     id:"inputLogin",
     type:"text",
     placeholder:"Email",
-    value:user.login,
+    value:newUser.login,
     action:""
   });
   setAttribute(inputPassword, 
@@ -134,7 +132,7 @@ const displayLoginForm = () => {
     id:"inputPassword",
     type:"text",
     placeholder:"Password",
-    value:user.password
+    value:newUser.password
 });
   setAttribute(buttonGo,{
   text:"Go",
@@ -165,7 +163,7 @@ const displayRegisterButton = () => {
 };
 
 const displayLogin = () => {  
-  displayTitle("game Session blabla");
+  displayTitle("Game Session");
   displayLoginForm();
   displayRegisterButton();
   document.body.appendChild(div1);
