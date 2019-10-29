@@ -1,6 +1,6 @@
 {
   "name": "worlds-of-game",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Skeleton worlds-of-game",
   "main": "index.js",
   "scripts": {
@@ -10,7 +10,7 @@
     "prod": "webpack --mode=production --watch"
   },
   "author": "CDA",
-  "license": "MIT",
+  "license": "Apache",
   "devDependencies": {
     "@babel/core": "latest",
     "babel-loader": "latest",
