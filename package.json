@@ -1,0 +1,39 @@
+{
+  "name": "worlds-of-game",
+  "version": "1.0.1",
+  "description": "Skeleton worlds-of-game",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha --require @babel/register --recursive1",
+    "start": "npm run dev",
+    "dev": "webpack --mode=development --watch",
+    "prod": "webpack --mode=production --watch"
+  },
+  "author": "CDA",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/core": "latest",
+    "babel-loader": "latest",
+    "@babel/preset-env": "latest",
+    "@babel/register": "latest",
+    "browser-sync": "latest",
+    "browser-sync-webpack-plugin": "latest",
+    "chai": "latest",
+    "cordova": "latest",
+    "mocha": "latest",
+    "webpack": "latest",
+    "webpack-cli": "latest"
+  },
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HiTa-life/worlds-of-game.git"
+  },
+  "bugs": {
+    "url": "https://github.com/HiTa-life/worlds-of-game/issues"
+  },
+  "homepage": "https://github.com/HiTa-life/worlds-of-game#readme"
+}
