@@ -122,15 +122,15 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) *
 
 /***/ }),
 
-/***/ "./src/shared/models/nameUser.models.js":
-/*!**********************************************!*\
-  !*** ./src/shared/models/nameUser.models.js ***!
-  \**********************************************/
+/***/ "./src/shared/models/nameUser.model.js":
+/*!*********************************************!*\
+  !*** ./src/shared/models/nameUser.model.js ***!
+  \*********************************************/
 /*! exports provided: NameUser */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"NameUser\", function() { return NameUser; });\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError(\"Cannot call a class as a function\"); } }\n\nvar NameUser = function NameUser(surName, firstName, lastName) {\n  _classCallCheck(this, NameUser);\n\n  this.surName = surName;\n  this.firstName = firstName;\n  this.lastName = lastName;\n};\n;\n\n//# sourceURL=webpack:///./src/shared/models/nameUser.models.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"NameUser\", function() { return NameUser; });\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError(\"Cannot call a class as a function\"); } }\n\nvar NameUser = function NameUser(surName, firstName, lastName) {\n  _classCallCheck(this, NameUser);\n\n  this.surName = surName;\n  this.firstName = firstName;\n  this.lastName = lastName;\n};\n;\n\n//# sourceURL=webpack:///./src/shared/models/nameUser.model.js?");
 
 /***/ }),
 
@@ -166,7 +166,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) *
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"User\", function() { return User; });\n/* harmony import */ var _mailUser_model__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./mailUser.model */ \"./src/shared/models/mailUser.model.js\");\n/* harmony import */ var _nameUser_models__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./nameUser.models */ \"./src/shared/models/nameUser.models.js\");\n/* harmony import */ var _addressUser_model__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./addressUser.model */ \"./src/shared/models/addressUser.model.js\");\n/* harmony import */ var _phoneUser_model__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./phoneUser.model */ \"./src/shared/models/phoneUser.model.js\");\n/* harmony import */ var _passwordUser_model__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./passwordUser.model */ \"./src/shared/models/passwordUser.model.js\");\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError(\"Cannot call a class as a function\"); } }\n\n\n\n\n\n\nvar User = function User() {\n  _classCallCheck(this, User);\n\n  this.nameUser = new _nameUser_models__WEBPACK_IMPORTED_MODULE_1__[\"NameUser\"]();\n  this.mailUser = new _mailUser_model__WEBPACK_IMPORTED_MODULE_0__[\"MailUser\"]();\n  this.addressUser = new _addressUser_model__WEBPACK_IMPORTED_MODULE_2__[\"AddressUser\"]();\n  this.phoneUser = new _phoneUser_model__WEBPACK_IMPORTED_MODULE_3__[\"PhoneUser\"]();\n  this.password = new _passwordUser_model__WEBPACK_IMPORTED_MODULE_4__[\"Password\"]();\n};\n;\n\n//# sourceURL=webpack:///./src/shared/models/user.model.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"User\", function() { return User; });\n/* harmony import */ var _mailUser_model__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./mailUser.model */ \"./src/shared/models/mailUser.model.js\");\n/* harmony import */ var _nameUser_model__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./nameUser.model */ \"./src/shared/models/nameUser.model.js\");\n/* harmony import */ var _addressUser_model__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./addressUser.model */ \"./src/shared/models/addressUser.model.js\");\n/* harmony import */ var _phoneUser_model__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./phoneUser.model */ \"./src/shared/models/phoneUser.model.js\");\n/* harmony import */ var _passwordUser_model__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./passwordUser.model */ \"./src/shared/models/passwordUser.model.js\");\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError(\"Cannot call a class as a function\"); } }\n\n\n\n\n\n\nvar User = function User() {\n  _classCallCheck(this, User);\n\n  this.nameUser = new _nameUser_model__WEBPACK_IMPORTED_MODULE_1__[\"NameUser\"]();\n  this.mailUser = new _mailUser_model__WEBPACK_IMPORTED_MODULE_0__[\"MailUser\"]();\n  this.addressUser = new _addressUser_model__WEBPACK_IMPORTED_MODULE_2__[\"AddressUser\"]();\n  this.phoneUser = new _phoneUser_model__WEBPACK_IMPORTED_MODULE_3__[\"PhoneUser\"]();\n  this.password = new _passwordUser_model__WEBPACK_IMPORTED_MODULE_4__[\"Password\"]();\n};\n;\n\n//# sourceURL=webpack:///./src/shared/models/user.model.js?");
 
 /***/ })
 
