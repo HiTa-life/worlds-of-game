@@ -3,17 +3,23 @@ import { User } from "../models/user.model";
 
 export class LoginForm extends Components {
 
-    constructor(div1,user) {
-       
-        super();             
-        const form = super.createAppendElement(div1,"form");      
-        const inputLogin = super.createAppendElement(form,"input");      
-        const inputPassword = super.createAppendElement(form,"input");
-        this.buttonGoLink = super.createAppendElement(form,"a");
-        const buttonGo = super.createAppendElement(this.buttonGoLink,"button");
-             this.loginText = super.createAppendTextNode(buttonGo,"Login");
-        
-        
+    constructor() {
+
+        super();
+        this.loginText;
+        this.buttonGoLink
+
+    }
+
+    display(div1, user) {
+        const form = super.createAppendElement(div1, "form");
+        const inputLogin = super.createAppendElement(form, "input");
+        const inputPassword = super.createAppendElement(form, "input");
+        this.buttonGoLink = super.createAppendElement(form, "a");
+        const buttonGo = super.createAppendElement(this.buttonGoLink, "button");
+        this.loginText = super.createAppendTextNode(buttonGo, "Login");
+
+
         super.setAttribute(form, {
             class: "form",
             method: "post",
@@ -36,14 +42,7 @@ export class LoginForm extends Components {
         super.setAttribute(buttonGo, {
             text: "Go",
             type: "submit",
-            href: "https://fr.wikipedia.org"            
+            href: "https://fr.wikipedia.org"
         });
-        
-        // form.appendChild(inputLogin);
-        // form.appendChild(inputPassword);
-        // form.appendChild(this.buttonGoLink);
-        // buttonGo.appendChild(this.loginText);
-        // this.buttonGoLink.appendChild(buttonGo);
-        // div1.appendChild(form);
-    };
+    }
 }

@@ -5,17 +5,25 @@ import { LoginForm } from "./loginForm.component";
 
 export class Login {
 
-    constructor() {
+    constructor() {        
+    }
 
-        const div1 = document.createElement("div");        
-        new TitleComponent(div1);
-        new RegisterButton(div1);
-        document.body.appendChild(div1);
-        const user = new User();
-        user.nameUser.surName = "john";
-        user.password = "blabla";
-        new LoginForm(div1, user);
+        display(){
+            const div1 = document.createElement("div");  
+
+            const titleComponent = new TitleComponent();
+            titleComponent.display(div1);
+
+            const registerButton = new RegisterButton(); 
+            registerButton.display(div1);
+
+            const user = new User();
+            user.nameUser.surName = "john";
+            user.password = "blabla";
+            const loginForm = new LoginForm();
+            loginForm.display(div1,user);
+            document.body.appendChild(div1);
+        } 
         
       
     };
-}

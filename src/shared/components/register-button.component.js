@@ -1,10 +1,16 @@
 import { Components } from "./super-component";
 
 export class RegisterButton extends Components {
-  constructor(div1) {
+  constructor() {
     super();
+    this.buttonRegister;
+    this.buttonRegisterLink;
+  }
+    
+
+  display (div1) {
     const buttonRegisterLink = super.createAppendElement(div1, "a");
-    const buttonRegister = super.createAppendElement(buttonRegisterLink, "button");
+    const buttonRegister = super.createAppendElement(buttonRegisterLink,"button");
     super.createAppendTextNode(buttonRegister, "Register");
     
     super.setAttribute(buttonRegister, {
@@ -14,6 +20,7 @@ export class RegisterButton extends Components {
     super.setAttribute(buttonRegisterLink, {
       href: "https://www.google.fr"
     });
-  };
+  }
+  
 }
 
