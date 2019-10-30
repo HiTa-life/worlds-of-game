@@ -1,6 +1,6 @@
 {
   "name": "worlds-of-game",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Skeleton worlds-of-game",
   "main": "index.js",
   "scripts": {
