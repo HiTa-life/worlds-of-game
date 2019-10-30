@@ -1,5 +1,5 @@
 export class NameUser {
-    constructor( surName, 
+    constructor(surName, 
         firstName, 
         lastName, 
         ) 
