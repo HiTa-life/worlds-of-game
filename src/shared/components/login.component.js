@@ -11,16 +11,16 @@ export class Login {
         display(){
             const div1 = document.createElement("div");  
 
-            const titleComponent = new TitleComponent();
+            const titleComponent = new TitleComponent("Worlds of Game");
             titleComponent.display(div1);
 
-            const registerButton = new RegisterButton(); 
+            const registerButton = new RegisterButton("Register"); 
             registerButton.display(div1);
 
             const user = new User();
             user.nameUser.surName = "john";
             user.password = "blabla";
-            const loginForm = new LoginForm();
+            const loginForm = new LoginForm("Login");
             loginForm.display(div1,user);
             document.body.appendChild(div1);
         } 
