@@ -1,8 +1,8 @@
-import { MailUser } from "./mailUser.model";
-import { NameUser } from "./nameUser.model";
-import { AddressUser } from "./addressUser.model";
-import { PhoneUser } from "./phoneUser.model";
-import { Password } from "./passwordUser.model";
+import { MailUser } from "./mail-user.model";
+import { NameUser } from "./name-user.model";
+import { AddressUser } from "./address-user.model";
+import { PhoneUser } from "./phone-user.model";
+import { Password } from "./password-user.model";
 
 
 export class User {

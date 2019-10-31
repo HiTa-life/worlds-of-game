@@ -1,39 +1,5 @@
-import {Login} from "./shared/components/login.component"
-const login = new Login();
+import 'bootstrap';
+import {LoginComponent} from "./app/login/login-component/login.component";
+
+const login = new LoginComponent();
 login.display();
-
-
-// /**
-//  * @type {HTMLElement}
-//  */
-//  const element = document.createElement(tagName);
-
-
-
-// /**
-//  * @param {String} tagName 
-//  * @param {HTMLElement} to 
-//  * @returns {HTMLElement}
-//  */
-// const createElementThenAppendTo = (tagName, to) => {
-//   const element = document.createElement(tagName);
-//   to.appendChild(element)
-//   return element;
-// }
-
-
-// const myForm = createElementThenAppendTo("form", document.body);
-
-
-
-
-
-
-
- 
-
-
-
-
-
-
