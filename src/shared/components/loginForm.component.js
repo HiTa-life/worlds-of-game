@@ -3,10 +3,10 @@ import { User } from "../models/user.model";
 
 export class LoginForm extends Components {
 
-    constructor() {
+    constructor(textLogin) {
 
         super();
-        this.loginText;
+        this.textLogin = textLogin;
         this.buttonGoLink
 
     }
@@ -17,7 +17,7 @@ export class LoginForm extends Components {
         const inputPassword = super.createAppendElement(form, "input");
         this.buttonGoLink = super.createAppendElement(form, "a");
         const buttonGo = super.createAppendElement(this.buttonGoLink, "button");
-        this.loginText = super.createAppendTextNode(buttonGo, "Login");
+        const loginText = super.createAppendTextNode(buttonGo, this.textLogin);
 
 
         super.setAttribute(form, {
