@@ -8,12 +8,12 @@ import { Password } from "./password-user.model";
 export class User {
 
     constructor() {
-        this.nameUser = new NameUser();
-        this.mailUser = new MailUser();
-        this.addressUser = new AddressUser();
-        this.phoneUser = new PhoneUser();
-        this.password = new Password();
+        // this.nameUser = new NameUser();
+        // this.mailUser = new MailUser();
+        // this.addressUser = new AddressUser();
+        // this.phoneUser = new PhoneUser();
+        // this.password = new Password();
 
-    }
+    }  
 
 };

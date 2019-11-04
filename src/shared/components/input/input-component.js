@@ -1,9 +1,9 @@
 import { Component } from "../component";
 
 export class InputComponent extends Component {
-    constructor(id, type, placeholder,value) {
+    constructor( type, placeholder,value) {
         super();
-        this.id = id;
+        
         this.type = type;
         this.placeholder = placeholder; 
         this.value = value;     
@@ -12,8 +12,7 @@ export class InputComponent extends Component {
     display(div1) {
        
         const name = super.createAppendElement(div1, "input");
-        super.setAttribute(name,{ 
-            id: this.id, 
+        super.setAttribute(name,{             
             type: this.type, 
             placeholder: this.placeholder, 
             value: this.value});
