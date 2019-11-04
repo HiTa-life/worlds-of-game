@@ -1,5 +1,5 @@
 import { User } from "../../../shared/models/user/user.model";
-import { TitleComponent } from "../../../shared/components/title/title.component";
+import { BrandTitle } from "../../../shared/components/brand/brand-title";
 import { RegisterButtonComponent } from "../register-button/register-button.component";
 import { LoginFormComponent } from "../login-form-component/login-form.component";
 import { Component } from "../../../shared/components/component";
@@ -12,7 +12,7 @@ export class LoginComponent extends Component {
 
     display() {
         const div1 = document.createElement("div");
-        const titleComponent = new TitleComponent("Worlds of Game");
+        const titleComponent = new BrandTitle("Worlds of Game");
         const registerButton = new RegisterButtonComponent("Register");
         const user = new User();
         const loginForm = new LoginFormComponent("Login");
