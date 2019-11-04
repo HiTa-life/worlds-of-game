@@ -1,7 +1,7 @@
 import { Component } from "../../shared/components/component";
 import { BrandTitle } from "../../shared/components/brand/brand-title";
 import { User } from "../../shared/models/user/user.model";
-import { InputComponent } from "../../shared/components/input/input-component";
+import $ from "jquery";
 
 
 
@@ -10,6 +10,19 @@ export class RegisterComponent extends Component {
         super();
         this.titleRegister = new BrandTitle("Worlds of Game");
         this.user = new User();
+        console.log($);
+        // const myTab = [
+        //     this.surname = surname,
+        //     this.firstName = firstName,
+        //     this.lastName = lastName,
+        //     this.mail = mail,
+        //     this.phone = phone,
+        //     this.address = address,
+        //     this.city = city,
+        //     this.zipCode = zipCode,
+        //     this.passwordRegister = this.passwordRegister
+
+        // ]
         this.surname = surname;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -111,8 +124,8 @@ export class RegisterComponent extends Component {
         super.createAppendTextNode(labelZipCode, "zip code");
         this.zipCode = super.createAppendElement(form, "input");
         super.setAttribute(this.zipCode, {
-            type: "number",
-            placeholder: "36 987",
+            type: "text",
+            placeholder: "",
             value:""
         })
         const labelPassword = super.createAppendElement(form, "label");
@@ -143,9 +156,19 @@ export class RegisterComponent extends Component {
 
     }
     clickButton(event) {
-        event.preventDefault();
-        //this.user =  new User();
-
+        event.preventDefault();       
+        // const myTabUser = [
+        //     this.user.surname = this.surname.value,
+        //     this.user.firstName = this.firstName.value,
+        //     this.user.lastName = this.lastName.value,
+        //     this.user.mail = this.mail.value,
+        //     this.user.phone = this.phone.value,
+        //     this.user.address = this.address.value,
+        //     this.user.city = this.city.value,
+        //     this.user.zipCode = this.zipCode.value,
+        //     this.user.passwordRegister = this.passwordRegister.value
+        // ];
+        // console.log(myTabUser);
         this.user.surname = this.surname.value;
         this.user.firstName = this.firstName.value;
         this.user.lastName = this.lastName.value;
@@ -156,6 +179,7 @@ export class RegisterComponent extends Component {
         this.user.zipCode = this.zipCode.value;
         this.user.passwordRegister = this.passwordRegister.value;
         console.log(this.user);
+        
     }
 }
 

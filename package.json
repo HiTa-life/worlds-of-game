@@ -13,13 +13,14 @@
   "license": "Apache",
   "devDependencies": {
     "@babel/core": "latest",
-    "babel-loader": "latest",
     "@babel/preset-env": "latest",
     "@babel/register": "latest",
+    "babel-loader": "latest",
     "browser-sync": "latest",
     "browser-sync-webpack-plugin": "latest",
     "chai": "latest",
     "cordova": "latest",
+    "jquery": "^3.4.1",
     "mocha": "latest",
     "webpack": "latest",
     "webpack-cli": "latest"
@@ -31,7 +32,6 @@
     "bootstrap": "^4.3.1",
     "css-loader": "^3.2.0",
     "file-loader": "^4.2.0",
-    "jquery": "^3.4.1",
     "mini-css-extract-plugin": "^0.8.0",
     "node-sass": "^4.13.0",
     "popper.js": "^1.16.0",
