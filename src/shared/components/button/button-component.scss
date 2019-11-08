@@ -1,0 +1,11 @@
+@import "~bootstrap/scss/bootstrap.scss";
+wod-button{
+
+    button{
+        @extend .btn;
+        @extend .btn-warning;
+        margin-left: 10px;
+
+
+    }
+}

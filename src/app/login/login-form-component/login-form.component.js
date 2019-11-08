@@ -17,50 +17,49 @@ export class LoginFormComponent extends Component {
         this.inputPassword;
         this.loadingComponent = new LoadingComponent();
        this.alert = new AlertComponent();
+       this.divEmail;
+       this.divPassword;
+       this.div1;
     }
 
     display() {
-        this.div1 = document.createElement("div");       
-        this.form = super.createAppendElement(this.div1, "form");
-        const div2 = document.createElement("div");
-        const div3 = document.createElement("div");
+        this.div1 = document.createElement("wog-login-form-component");       
+        this.form = super.createAppendElement(this.div1, "form");       
         this.titleComponent = new BrandTitle("Worlds of Game","assets/images/logo-color.png");
-        this.titleComponent.display(this.div1)
-        this.labelEmail = document.createElement("label");
-        this.labelEmailText = document.createTextNode("login");
-        this.labelEmail.appendChild(this.labelEmailText);
-        this.labelPassword = document.createElement("label");
-        this.labelPasswordText = document.createTextNode("password");
-        this.labelPassword.appendChild(this.labelPasswordText);
-        div2.appendChild(this.labelEmail);
-        div3.appendChild(this.labelPassword);
-        this.div1.appendChild(div2);
-        this.div1.appendChild(div3);
-        this.div1.appendChild(this.form)
+        this.titleComponent.display(this.div1);
         
-        this.inputLogin = new InputComponent(
-            "email",
-            "Email",
-            ""
-        );
-     
-        this.inputPassword = new InputComponent(
-            "password",
-            "password",
-            ""
-        );
-       
-
-        this.inputLogin.display(this.div1);
-        this.inputPassword.display(this.div1);
         super.setAttribute(this.form, {
             class: "form",
             method: "post",
             action: ""
         });
+              
+        this.divEmail = document.createElement("wog-email");
+        this.inputLogin = new InputComponent(
+            "email",
+            "Email",
+            ""
+        );
+        this.inputLogin.display(this.div1);
+        this.divEmail.appendChild(this.inputLogin.name);
+        this.div1.appendChild(this.divEmail);
+
+        this.divPassword = document.createElement("wog-password");
+        this.inputPassword = new InputComponent(
+            "password",
+            "password",
+            ""
+        );
+        this.inputPassword.display(this.div1);
+        this.divPassword.appendChild(this.inputPassword.name);
+        this.div1.appendChild(this.divPassword);       
+
 
         this.buttonLogin = new ButtonComponent("Login", "submit", "Login", "post");
         this.buttonLogin.display(this.div1);
+        this.buttonRegister = new ButtonComponent("Register", "submit", "register", "post");
+        this.buttonRegister.display(this.div1);
+
         this.buttonLogin.buttonName.addEventListener("click", (event) => { this.clickButtonLogin(event); });
         document.body.appendChild(this.div1);
     }
@@ -130,6 +129,7 @@ export class LoginFormComponent extends Component {
         this.inputLogin.hide();
         this.inputPassword.hide();
         this.buttonLogin.hide();
+        this.buttonRegister.hide();
     }
 
 }

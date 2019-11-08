@@ -1,8 +1,5 @@
 import { Component } from "../../shared/components/component";
 import { BrandTitle } from "../../shared/components/brand/brand-title";
-import { User } from "../../shared/models/user/user.model";
-
-
 import { UserService } from "../../shared/services/user.service";
 import { LoadingComponent } from "../../shared/components/loading/loading.component";
 import { ButtonComponent } from "../../shared/components/button/button-component";
@@ -32,7 +29,7 @@ export class RegisterComponent extends Component {
 
     display() {
 
-        const div1 = document.createElement("div");
+        const div1 = document.createElement("wog-register-component");
         const div2 = super.createAppendElement(div1, "div");
         const div3 = super.createAppendElement(div2, "div");
         this.titleRegister.display(div3);

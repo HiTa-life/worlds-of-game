@@ -20,7 +20,7 @@ export class LoginComponent extends Component {
 
     display() {
         const user = UserService.get();
-        const div1 = document.createElement("div");
+        const div1 = document.createElement("wog-login-component");
         const div2 = document.createElement("div");
         const div3 = document.createElement("div");
 
