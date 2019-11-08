@@ -1,38 +1,33 @@
 import { Component } from "../../shared/components/component";
 import { BrandTitle } from "../../shared/components/brand/brand-title";
 import { User } from "../../shared/models/user/user.model";
-import $ from "jquery";
 
 
+import { UserService } from "../../shared/services/user.service";
+import { LoadingComponent } from "../../shared/components/loading/loading.component";
+import { ButtonComponent } from "../../shared/components/button/button-component";
+import { AlertComponent } from "../../shared/components/alert/alert-component";
 
 export class RegisterComponent extends Component {
-    constructor(user,surname, firstName, lastName, mail, phone, address, city, zipCode) {
+    constructor(form, radioButtonMister, radioButtonMiss, gender, surname, firstName, lastName, email, phone, adress, city, zip, password) {
         super();
         this.titleRegister = new BrandTitle("Worlds of Game");
-        this.user = new User();
-        console.log($);
-        // const myTab = [
-        //     this.surname = surname,
-        //     this.firstName = firstName,
-        //     this.lastName = lastName,
-        //     this.mail = mail,
-        //     this.phone = phone,
-        //     this.address = address,
-        //     this.city = city,
-        //     this.zipCode = zipCode,
-        //     this.passwordRegister = this.passwordRegister
-
-        // ]
+        this.radioButtonMister = radioButtonMister;
+        this.radioButtonMiss = radioButtonMiss;
+        this.gender = gender;
         this.surname = surname;
         this.firstName = firstName;
         this.lastName = lastName;
-        this.mail = mail;
+        this.email = email;
         this.phone = phone;
-        this.address = address;
+        this.adress = adress;
         this.city = city;
-        this.zipCode = zipCode;
-        this.passwordRegister = this.passwordRegister;
-
+        this.zip = zip;
+        this.password = password;
+        this.form = form;
+        this.loadingComponent = new LoadingComponent();
+        this.alert = new AlertComponent();
+        
     }
 
     display() {
@@ -41,145 +36,198 @@ export class RegisterComponent extends Component {
         const div2 = super.createAppendElement(div1, "div");
         const div3 = super.createAppendElement(div2, "div");
         this.titleRegister.display(div3);
-        const form = super.createAppendElement(div3, "form");
-        // const user = new User();
-        const radioButtonMister = super.createAppendElement(form, "input");
-        super.setAttribute(radioButtonMister, {
-            type: "radio",           
+        this.form = super.createAppendElement(div3, "form");
+
+        this.radioButtonMister = super.createAppendElement(this.form, "input");
+        super.setAttribute(this.radioButtonMister, {
+            type: "radio",
             name: "civilité",
             value: "monsieur",
-           
+
         });
-        const labelMister = super.createAppendElement(form, "label");
+        const labelMister = super.createAppendElement(this.form, "label");
         super.createAppendTextNode(labelMister, "monsieur");
 
-        const radioButtonMiss = super.createAppendElement(form, "input");
-        super.setAttribute(radioButtonMiss, {
+        this.radioButtonMiss = super.createAppendElement(this.form, "input");
+        super.setAttribute(this.radioButtonMiss, {
             type: "radio",
             name: "civilité",
             value: "madame"
         });
-        const labelMiss = super.createAppendElement(form, "label");
+        const labelMiss = super.createAppendElement(this.form, "label");
         super.createAppendTextNode(labelMiss, "madame" + " ");
 
-        const labelSurname = super.createAppendElement(form, "label");
+        const labelSurname = super.createAppendElement(this.form, "label");
         super.createAppendTextNode(labelSurname, " " + "surname");
 
-        this.surname = super.createAppendElement(form, "input");
+        this.surname = super.createAppendElement(this.form, "input");
         super.setAttribute(this.surname, {
             type: "text",
             placeholder: "surname",
-            value :" "
+            value: " "
         })
-        const labelFirst = super.createAppendElement(form, "label");
+        const labelFirst = super.createAppendElement(this.form, "label");
         super.createAppendTextNode(labelFirst, "firstname");
-        this.firstName = super.createAppendElement(form, "input");
+        this.firstName = super.createAppendElement(this.form, "input");
         super.setAttribute(this.firstName, {
             type: "text",
             placeholder: "firstname",
-            value :" "
+            value: " "
         })
-        const labelLastName = super.createAppendElement(form, "label");
+        const labelLastName = super.createAppendElement(this.form, "label");
         super.createAppendTextNode(labelLastName, "lastname");
 
-        this.lastName = super.createAppendElement(form, "input");
+        this.lastName = super.createAppendElement(this.form, "input");
         super.setAttribute(this.lastName, {
             type: "text",
             placeholder: "lastname",
-            value :" "
+            value: " "
         })
-        const labelMail = super.createAppendElement(form, "label");
+        const labelMail = super.createAppendElement(this.form, "label");
         super.createAppendTextNode(labelMail, "mail");
 
-        this.mail = super.createAppendElement(form, "input");
-        super.setAttribute(this.mail, {
+        this.email = super.createAppendElement(this.form, "input");
+        super.setAttribute(this.email, {
             type: "mail",
             value: "test@example.com"
         })
-        const labelNumber = super.createAppendElement(form, "label");
+        const labelNumber = super.createAppendElement(this.form, "label");
         super.createAppendTextNode(labelNumber, "phone number");
-        this.phone = super.createAppendElement(form, "input");
+        this.phone = super.createAppendElement(this.form, "input");
         super.setAttribute(this.phone, {
             type: "number",
             placeholder: "0669856321",
-            value :""
+            value: ""
         })
-        const labelAddress = super.createAppendElement(form, "label");
+        const labelAddress = super.createAppendElement(this.form, "label");
         super.createAppendTextNode(labelAddress, "address");
-        this.address = super.createAppendElement(form, "input");
-        super.setAttribute(this.address, {
+        this.adress = super.createAppendElement(this.form, "input");
+        super.setAttribute(this.adress, {
             type: "text",
             placeholder: "chemin de l'arbre vert",
-            value :""
+            value: ""
         })
-        const labelCity = super.createAppendElement(form, "label");
+        const labelCity = super.createAppendElement(this.form, "label");
         super.createAppendTextNode(labelCity, "city");
-        this.city = super.createAppendElement(form, "input");
+        this.city = super.createAppendElement(this.form, "input");
         super.setAttribute(this.city, {
             type: "text",
             placeholder: "Poudlard",
-            value :""
+            value: ""
         })
-        const labelZipCode = super.createAppendElement(form, "label");
+        const labelZipCode = super.createAppendElement(this.form, "label");
         super.createAppendTextNode(labelZipCode, "zip code");
-        this.zipCode = super.createAppendElement(form, "input");
-        super.setAttribute(this.zipCode, {
+        this.zip = super.createAppendElement(this.form, "input");
+        super.setAttribute(this.zip, {
             type: "text",
             placeholder: "",
-            value:""
+            value: ""
         })
-        const labelPassword = super.createAppendElement(form, "label");
+        const labelPassword = super.createAppendElement(this.form, "label");
         super.createAppendTextNode(labelPassword, "password");
-        this.passwordRegister = super.createAppendElement(form, "input");
-        super.setAttribute(this.passwordRegister, {
+        this.password = super.createAppendElement(this.form, "input");
+        super.setAttribute(this.password, {
             type: "password",
             value: ""
         })
+        this.buttonClear =  new ButtonComponent("ButtonClear","submit","Clear","submit")
+        this.buttonClear.display(this.form)       
 
-        const buttonClear = super.createAppendElement(form, "button");
-        super.setAttribute(buttonClear, {
-            type: "submit",
-            value: "clear",
-            method: "submit"
-        });
-        const buttonSave = super.createAppendElement(form, "button");
-        super.setAttribute(buttonSave, {
-            type: "submit",
-            value: "save",
-            method: "post"
+        this.buttonSave = new ButtonComponent("buttonSave", "submit", "Create Account", "post");
+        this.buttonSave.display(this.form);
 
-        });
-        buttonSave.addEventListener("click", (event) => { this.clickButton(event); });
-        const clearText = super.createAppendTextNode(buttonClear, "clear");
-        const saveText = super.createAppendTextNode(buttonSave, "Create account");
+        this.buttonSave.buttonName.addEventListener("click", (event) => { this.clickButton(event); });        
         document.body.appendChild(div1);
 
     }
     clickButton(event) {
-        event.preventDefault();       
-        // const myTabUser = [
-        //     this.user.surname = this.surname.value,
-        //     this.user.firstName = this.firstName.value,
-        //     this.user.lastName = this.lastName.value,
-        //     this.user.mail = this.mail.value,
-        //     this.user.phone = this.phone.value,
-        //     this.user.address = this.address.value,
-        //     this.user.city = this.city.value,
-        //     this.user.zipCode = this.zipCode.value,
-        //     this.user.passwordRegister = this.passwordRegister.value
-        // ];
-        // console.log(myTabUser);
-        this.user.surname = this.surname.value;
-        this.user.firstName = this.firstName.value;
-        this.user.lastName = this.lastName.value;
-        this.user.mail = this.mail.value;
-        this.user.phone = this.phone.value;
-        this.user.address = this.address.value;
-        this.user.city = this.city.value;
-        this.user.zipCode = this.zipCode.value;
-        this.user.passwordRegister = this.passwordRegister.value;
-        console.log(this.user);
-        
+        event.preventDefault();
+        // if (radioButtonMister.checked === true){
+        //     user.gender = this.radioButtonMister.value;
+        // }
+        // else {
+        //     user.gender = this.radioButtonMiss.value;
+        // }
+        //  window.history.pushState(
+        //      {},
+        //      "home",
+        //      "/home"
+        //  )
+
+        const user = UserService.get();
+        user.surname = this.surname.value;
+        user.firstName = this.firstName.value;
+        user.lastName = this.lastName.value;
+        user.email = this.email.value;
+        user.phone = this.phone.value;
+        user.adress = this.adress.value;
+        user.city = this.city.value;
+        user.zip = this.zip.value;
+        user.password = this.password.value;
+        console.log(user);
+
+        this.postStart();
+        UserService
+            .post()
+            .then((data) => {
+                this.postSuccess(data);
+                this.postEnd();
+            })
+            .catch((xhr) => {
+                this.postError(xhr.status);
+                this.postEnd();
+            });
     }
+
+    postStart() {
+        console.log("start");
+        if(this.alert.element
+             && this.alert.element.parentNode){
+            this.alert.hide();
+        }
+        this.loadingComponent.display(this.buttonSave.buttonName.parentNode);
+        this.buttonSave.buttonName.parentNode.removeChild(this.buttonSave.buttonName);    
+    };
+
+    postEnd() {        
+        this.loadingComponent.hide();
+        this.buttonSave = new ButtonComponent("buttonSave", "submit", "Create Account", "post");
+        this.buttonSave.display(this.form);
+        this.buttonSave.buttonName.addEventListener("click", (event) => { this.clickButton(event); });
+
+        console.log("end");
+    };
+
+    postSuccess(user) {
+        // if(200 === xhr.status || 201 === xhr.status){
+        //     data.post(JSON.stringify(user))
+        // }   
+        //redirection page login avec history 
+        
+        console.log("success");
+
+    };
+    postError(status) {
+        // this.alert = 409 === status ? "Account already exist" : 412 === status ? "Bad model" :
+        // 500 === status ? "Service unvailable" : 0 === status ? 
+
+        if(409 === status){
+            this.alert.text = "Account already exist";
+           
+        }else if(412 === status){
+            this.alert.text = "Bad model";
+            
+        }
+        else if(500 === status){
+            this.alert.text = "Service unvailable"
+            
+        }
+        else if(0 === status){
+            this.alert.text = "network Error"
+           
+        }       
+        this.alert.display(this.form)
+        console.log("error");
+    };
 }
 

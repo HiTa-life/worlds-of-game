@@ -6,16 +6,14 @@ export class AlertComponent  {
         this.text = text;
     }
     display(div1){
-        this.alert = document.createElement("label");
+        this.element = document.createElement("label");
         this.textInsert = document.createTextNode(this.text);
-        this.alert.appendChild(this.textInsert);
-       this.form.insertBefore(this.alert,this.radioButtonMister);
+        this.element.appendChild(this.textInsert);
+       div1.parentNode.insertBefore(this.element,div1);
+       //div1.insertBefore(this.alert,div1.firstChild);
 
-
-    //     this.alert = super.createAppendElement(div1, "label");
-    // super.createAppendTextNode(this.alert, this.text); 
    }
    hide(){
-    this.alert.parentNode.removeChild(this.alert);
+    this.element.parentNode.removeChild(this.element);
    }
 }

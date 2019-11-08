@@ -2,7 +2,8 @@
 
 export class User {
 
-    constructor(email,password,surname,firstName,lastName,phone,adress,city,zip) {
+    constructor(gender,email,password,surname,firstName,lastName,phone,adress,city,zip) {
+        this.gender = gender;
         this.email = email;
         this.password = password; 
         this.surname = surname;
@@ -12,6 +13,8 @@ export class User {
         this.adress = adress;
         this.city = city;
         this.zip = zip;
+        this.token = null;
+
       
 
     }  
