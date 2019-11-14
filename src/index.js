@@ -6,24 +6,24 @@ import { LoadingComponent } from "./shared/components/loading/loading.component"
 import { Router } from "./shared/router/router";
 import { HomeComponent } from "./app/home/home-component";
 
-const loginForm = new LoginFormComponent();
-loginForm.display();
+// const loginForm = new LoginFormComponent();
+// loginForm.display();
 
-// Router.addComponent(
-//   "login",
-//   "/login",
-//   new LoadingComponent());
+Router.addComponent(
+  "login",
+  "/login",
+  new LoadingComponent());
   
-//   Router.addComponent(
-//       "register",
-//       "/register",
-//      new RegisterComponent());
+  Router.addComponent(
+      "register",
+      "/register",
+     new RegisterComponent());
 
-// Router.addComponent(
-//   "home",
-//   "/home",
-//   new HomeComponent());
+Router.addComponent(
+  "home",
+  "/home",
+  new HomeComponent());
 
 
-//  Router.navigate("login");
+ Router.navigate("login");
  

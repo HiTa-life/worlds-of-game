@@ -4,8 +4,9 @@ export class AlertComponent  {
     constructor (text){
         
         this.text = text;
+        this.div1= null;
     }
-    display(){
+    display(div1){
         this.div1 = document.createElement("wog-alert-component")
         this.element = document.createElement("label");
         this.textInsert = document.createTextNode(this.text);

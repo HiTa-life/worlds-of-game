@@ -4,6 +4,8 @@ import { UserService } from "../../shared/services/user.service";
 import { LoadingComponent } from "../../shared/components/loading/loading.component";
 import { ButtonComponent } from "../../shared/components/button/button-component";
 import { AlertComponent } from "../../shared/components/alert/alert-component";
+import { Router } from "../../shared/router/router";
+import { UserLocalService } from "../../shared/services/UserLocalService/user-local-service";
 
 export class RegisterComponent extends Component {
     constructor(form, radioButtonMister, radioButtonMiss, gender, surname, firstName, lastName, email, phone, adress, city, zip, password) {
@@ -196,6 +198,8 @@ export class RegisterComponent extends Component {
     };
 
     postSuccess(user) {
+        UserLocalService.post();
+        Router.navigate("login");
         // if(200 === xhr.status || 201 === xhr.status){
         //     data.post(JSON.stringify(user))
         // }   
@@ -226,5 +230,8 @@ export class RegisterComponent extends Component {
         this.alert.display(this.form)
         console.log("error");
     };
+    hide() {
+        document.body.removeChild(this.element);
+    }
 }
 
