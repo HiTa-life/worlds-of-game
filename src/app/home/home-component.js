@@ -8,6 +8,7 @@ import { BrandTitle } from "../../shared/components/brand/brand-title";
 export class HomeComponent extends Component {
     constructor() {
             super();
+            this.element = null;
             this.buttonProposed;
             this.buttonSearch;
             this.question;            
@@ -15,7 +16,7 @@ export class HomeComponent extends Component {
 
      
      display() {
-        const div1 = document.createElement("div");
+        this.element = document.createElement("app-home");
         this.question = super.createAppendElement(div1,"label")
         super.createAppendTextNode(this.question,"Ready for a Game Party?")
         this.question.display(div1);
@@ -32,5 +33,6 @@ export class HomeComponent extends Component {
         this.titleComponent.hide();
         this.buttonProposed.hide();
         this.buttonSearch.hide();
+        this.element.parentNode.removeChild(this.element);
     }
 }
