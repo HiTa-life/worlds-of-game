@@ -44,7 +44,7 @@ export class LoginComponent extends Component {
         .buttonName
         .addEventListener("click", () => Router.navigate("register"));        
         document.body.appendChild(this.element);
-         if (UserLocalService.get().token) {
+         if (UserService.get().token) {
             Router.navigate("home");
         }
      }
