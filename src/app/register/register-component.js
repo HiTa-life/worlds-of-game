@@ -23,19 +23,20 @@ export class RegisterComponent extends Component {
         this.city = city;
         this.zip = zip;
         this.password = password;
-        this.form = form;
+        this.form = null;
         this.loadingComponent = new LoadingComponent();
         this.alert = new AlertComponent();
+        this.element =  null;
+        this.form = null;
         
     }
 
-    display() {
-
-        const div1 = document.createElement("wog-register-component");
-        const div2 = super.createAppendElement(div1, "div");
-        const div3 = super.createAppendElement(div2, "div");
-        this.titleRegister.display(div3);
-        this.form = super.createAppendElement(div3, "form");
+    display(parent) {
+        this.form = document.createElement("form");
+        this.element = document.createElement("wog-register-component");
+        this.element.appendChild(this.form);
+        this.titleRegister.display(this.form);
+     
 
         this.radioButtonMister = super.createAppendElement(this.form, "input");
         super.setAttribute(this.radioButtonMister, {
@@ -136,8 +137,10 @@ export class RegisterComponent extends Component {
         this.buttonSave.display(this.form);
 
         this.buttonSave.buttonName.addEventListener("click", (event) => { this.clickButton(event); });        
-        document.body.appendChild(div1);
-
+        document.body.appendChild(this.element);
+    }
+     hide() {
+        this.element.parentNode.removeChild(this.element);
     }
     clickButton(event) {
         event.preventDefault();
@@ -230,8 +233,6 @@ export class RegisterComponent extends Component {
         this.alert.display(this.form)
         console.log("error");
     };
-    hide() {
-        document.body.removeChild(this.element);
-    }
+   
 }
 
