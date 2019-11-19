@@ -63,6 +63,13 @@ export class LoginFormComponent extends Component {
         this.buttonLogin.buttonName.addEventListener("click", (event) => { this.clickButtonLogin(event); });
         document.body.appendChild(this.div1);
     }
+     hide() {
+        this.inputLogin.hide();
+        this.inputPassword.hide();
+        this.buttonLogin.hide();
+        this.buttonRegister.hide();
+         this.div1.parentNode.removeChild(this.div1);
+    }
 
 
     clickButtonLogin(event) {
@@ -125,11 +132,6 @@ export class LoginFormComponent extends Component {
         console.log("error");
     };
 
-    hide() {
-        this.inputLogin.hide();
-        this.inputPassword.hide();
-        this.buttonLogin.hide();
-        this.buttonRegister.hide();
-    }
+   
 
 }
