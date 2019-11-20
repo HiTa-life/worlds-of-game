@@ -1,8 +1,8 @@
 export class Component {
 
     constructor(name, json) {
-        this.name = name;
-        this.json = json;
+        this.name = null;
+        this.json = null;
     }
 
     setAttribute(name, json) {
@@ -22,5 +22,7 @@ export class Component {
         parent.appendChild(text)
         return text;
     }
-
+ hide(){
+     
+ }
 }
