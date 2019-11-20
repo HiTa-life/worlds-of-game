@@ -22,7 +22,9 @@ export class Component {
         parent.appendChild(text)
         return text;
     }
- hide(){
-     
- }
+   hide(){
+       this.name.hide();
+       this.json.hide();
+    this.element.parentNode.removeChild(this.element);
+   }
 }
