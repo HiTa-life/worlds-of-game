@@ -7,24 +7,24 @@ export class InputComponent extends Component {
         this.type = type;
         this.placeholder = placeholder;
         this.value = value;
-        this.div1;
+        this.element = null;
         this.name;
     }
 
     display(div1) {
-        this.container= document.createElement("wod-input");
-        this.name = super.createAppendElement(this.container, "input");
+        this.element= document.createElement("wod-input");
+        this.name = super.createAppendElement(this.element, "input");
         super.setAttribute(this.name, {
             type: this.type,
             placeholder: this.placeholder,
             value: this.value
         });
 
-        this.container.appendChild(this.name);
-        div1.appendChild(this.container);
+       this.element.appendChild(this.name);
+        div1.appendChild(this.element);
     }
     hide() {
-        this.container.parentNode.removeChild(this.container);
+       this.element.parentNode.removeChild(this.element);
     }
 }
 
