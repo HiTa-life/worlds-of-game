@@ -5,18 +5,19 @@ export class LoadingComponent extends Component {
     constructor() {
         super();
         this.labelLoading;
+        this.element = null;
 
 
     }
     display() {
-        this.div1 = document.createElement("wog-loading-component")
-        this.labelLoading = super.createAppendElement(this.div1, "label");
+         this.element = document.createElement("wog-loading-component")
+        this.labelLoading = super.createAppendElement(this.element, "label");
         super.createAppendTextNode(this.labelLoading, "loading");
-        document.body.appendChild(this.div1);
+        document.body.appendChild( this.element);
     }
 
     hide() {
-        this.labelLoading.parentNode.removeChild(this.labelLoading);
+         this.element.parentNode.removeChild(this.element);
     }
 
 }
