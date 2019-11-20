@@ -8,22 +8,23 @@ export class ButtonComponent extends Component {
         this.value = value;
         this.method = method;
         this.container = null;
+        this.element = null;
     }
 
     display(div1) {
-        this.container = document.createElement("wod-button");
-        this.buttonName = super.createAppendElement(this.container, "button");
+        this.element = document.createElement("wod-button");
+        this.buttonName = super.createAppendElement(this.element, "button");
         super.createAppendTextNode(this.buttonName, this.value)
         super.setAttribute(this.buttonName, {
             type: this.type,
             value: this.value,
             method: this.method
         });
-        this.container.appendChild(this.buttonName);
-        div1.appendChild(this.container);
+        this.element.appendChild(this.buttonName);
+        div1.appendChild(this.element);
     }
 
     hide(){
-        this.container.parentNode.removeChild(this.container);        
+        this.element.parentNode.removeChild(this.element);        
     }
 }
