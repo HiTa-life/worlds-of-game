@@ -9,7 +9,7 @@ export class UserService {
     }
     static login(){
         return $.ajax({
-            url: `http://worldsofgame.alwaysdata.net/user.php?email=${user.email}&password=${user.password}` ,
+            url: `http://localhost:8000/login?email=${user.email}&password=${user.password}`,
             method: "GET",
             contentType: "application/json"                      
         })    
@@ -17,7 +17,7 @@ export class UserService {
 
     static post(){
         return $.ajax({
-            url: "http://worldsofgame.alwaysdata.net/user.php",
+            url: "http://localhost:8000/users",
             method: "POST",
             contentType: "application/json",
             data: JSON.stringify(user),
