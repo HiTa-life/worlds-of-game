@@ -6,10 +6,11 @@ export class Router {
   
   
     static addComponent(name, url, component) {
-      routes[name] = {
-        url : url,
-        component : component
-      };      
+      routes[name + ""] = {
+        url,
+        component
+      };   
+      return Router;   
     }
 
   
@@ -17,7 +18,7 @@ export class Router {
     if(route){
       route.component.hide();
     }
-    const route = routes[name];
+    route = routes[name + ""];
     history.pushState({},name,route.url);
     route.component.display();   
   }
