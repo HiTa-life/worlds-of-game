@@ -17,16 +17,16 @@ export class HomeComponent extends Component {
      
      display() {
         this.element = document.createElement("app-home");
-        this.question = super.createAppendElement(div1,"label")
+        this.question = super.createAppendElement(this.element,"label")
         super.createAppendTextNode(this.question,"Ready for a Game Party?")
-        this.question.display(div1);
+        this.question.display(this.element);
         this.titleComponent = new BrandTitle("Welcome to Game Session Society");
-        this.titleComponent.display(div1);
+        this.titleComponent.display(this.element);
         this.buttonProposed = new ButtonComponent("Proposed Game", "submit", "Proposed Game", "post");
-        this.buttonProposed.display(div1);
+        this.buttonProposed.display(this.element);
         this.buttonSearch= new ButtonComponent("Search Game", "submit", "Search Game", "post");
-        this.buttonSearch.display(div1);
-        document.body.appendChild(div1);
+        this.buttonSearch.display(this.element);
+        document.body.appendChild(this.element);
      }
     hide(){
         this.question.hide();
