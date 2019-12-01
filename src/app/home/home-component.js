@@ -20,19 +20,14 @@ export class HomeComponent extends Component {
         this.question = super.createAppendElement(this.element,"label")
         super.createAppendTextNode(this.question,"Ready for a Game Party?")
         this.question.display(this.element);
-        this.titleComponent = new BrandTitle("Welcome to Game Session Society");
-        this.titleComponent.display(this.element);
-        this.buttonProposed = new ButtonComponent("Proposed Game", "submit", "Proposed Game", "post");
-        this.buttonProposed.display(this.element);
-        this.buttonSearch= new ButtonComponent("Search Game", "submit", "Search Game", "post");
-        this.buttonSearch.display(this.element);
+        this.titleComponent = new BrandTitle("Welcome to Game Session Society");        
+        this.buttonProposed = new ButtonComponent("Proposed Game", "submit", "Proposed Game", "post");      
+        this.buttonSearch= new ButtonComponent("Search Game", "submit", "Search Game", "post");    
         document.body.appendChild(this.element);
      }
+
     hide(){
         this.question.hide();
-        this.titleComponent.hide();
-        this.buttonProposed.hide();
-        this.buttonSearch.hide();
         this.element.parentNode.removeChild(this.element);
     }
 }
