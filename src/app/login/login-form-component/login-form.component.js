@@ -75,8 +75,12 @@ export class LoginFormComponent extends Component {
     clickButtonLogin(event) {
         event.preventDefault();
         const user = UserService.get();
-        user.email = this.inputLogin.value;
-        user.password = this.inputPassword.value;
+        user.email = this.inputLogin.name.value;
+        user.password = this.inputPassword.name.value;
+        // console.log( this.inputPassword.element);
+        // console.log( this.inputPassword.element.value);
+        // console.log(user);
+        
         this.loginStart()
         UserService.login()
             .then((data) => {
