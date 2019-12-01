@@ -21,3 +21,4 @@ export class RegisterButtonComponent extends Component {
    hide() {
         document.body.removeChild(this.element);
     }
+  }
