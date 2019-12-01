@@ -64,7 +64,7 @@ export class RegisterComponent extends Component {
         super.setAttribute(this.surname, {
             type: "text",
             placeholder: "surname",
-            value: " "
+            value: ""
         })
         const labelFirst = super.createAppendElement(this.form, "label");
         super.createAppendTextNode(labelFirst, "firstname");
@@ -72,7 +72,7 @@ export class RegisterComponent extends Component {
         super.setAttribute(this.firstName, {
             type: "text",
             placeholder: "firstname",
-            value: " "
+            value: ""
         })
         const labelLastName = super.createAppendElement(this.form, "label");
         super.createAppendTextNode(labelLastName, "lastname");
@@ -81,7 +81,7 @@ export class RegisterComponent extends Component {
         super.setAttribute(this.lastName, {
             type: "text",
             placeholder: "lastname",
-            value: " "
+            value: ""
         })
         const labelMail = super.createAppendElement(this.form, "label");
         super.createAppendTextNode(labelMail, "mail");
