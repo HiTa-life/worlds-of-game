@@ -21,7 +21,8 @@ export class LoginComponent extends Component {
 
     display() {
         const user = UserService.get();
-       this.element = document.createElement("wog-login-component");
+        const div1 = document.createElement("div");
+        this.element = document.createElement("wog-login-component");
         const div2 = document.createElement("div");
         const div3 = document.createElement("div");
 
@@ -44,15 +45,13 @@ export class LoginComponent extends Component {
         .buttonName
         .addEventListener("click", () => Router.navigate("register"));        
         document.body.appendChild(this.element);
-         if (UserLocalService.get().token) {
+         if (UserService.get().token) {
             Router.navigate("home");
         }
      }
      hide(){
-         this.titleComponent.hide();
-         this.label.password.hide();
-         this.registerButton.hide();
-         this.labelEmail.hide();
+         this.titleComponent.hide();       
+         this.registerButton.hide();        
          this.loginForm.hide();
          this.element.parentNode.removeChild(this.element);
 
